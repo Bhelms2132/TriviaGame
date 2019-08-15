@@ -3,6 +3,15 @@ const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');   
 
+function createQuiz(){}
+
+function showResults(){}
+
+//--Run quiz--//
+createQuiz();
+
+//--Show results--//
+submitButton.addEventListener('click', showResults);
 
 
 
