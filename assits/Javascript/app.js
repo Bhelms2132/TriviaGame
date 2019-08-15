@@ -3,7 +3,33 @@ const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');   
 
-function createQuiz(){}
+function createQuiz(){
+   
+    const output = [];
+
+    myQuestions.forEach(
+        (currentQuestion, questionNumber) => {
+            const answers =[];
+
+            for(letter in currentQuestion.answers){
+
+                //--HTML radio button--//
+                answers.push(
+                    <label>
+                        <input type = "radio" name = "question${questionNumber}" value ="${letter}"></input>
+                          ${letter} :
+                          ${currentQuestion.answers[letter]}
+                    </label>
+                );
+            }
+
+            output.push(
+                <div class = "question">${currentQuestion.question}</div>
+                <diz class = "answers">${answers.join('')}</diz>
+            );
+        }
+    );
+}
 
 function showResults(){}
 
