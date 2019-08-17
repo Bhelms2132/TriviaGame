@@ -1,43 +1,49 @@
-//Var declared//
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');   
+//-- Timer--//
+var number = 100;
+var intervalId;
 
-function createQuiz(){
-   
-    const output = [];
 
-    myQuestions.forEach(
-        (currentQuestion, questionNumber) => {
-            const answers =[];
 
-            for(letter in currentQuestion.answers){
-
-                //--HTML radio button--//
-                answers.push(
-                    <label>
-                        <input type = "radio" name = "question${questionNumber}" value ="${letter}"></input>
-                          ${letter} :
-                          ${currentQuestion.answers[letter]}
-                    </label>
-                );
-            }
-
-            output.push(
-                <div class = "question">${currentQuestion.question}</div>
-                <diz class = "answers">${answers.join('')}</diz>
-            );
-        }
-    );
+function run() {
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
 }
 
-function showResults(){}
+//--Decrement fuction--//
+function decrement(){
 
-//--Run quiz--//
-createQuiz();
+    //--Decrease number by one--//
+    number--;
 
-//--Show results--//
-submitButton.addEventListener('click', showResults);
+    $("#show-number").html("<h2>" + number + "<h2>");
+
+    if (number === 0) {
+
+        stop();
+    }
+}
+
+function stop(){
+
+    clearInterval(intervalId);
+}
+
+run();
+
+console.log(number);
+
+
+
+
+
+
+
+
+
+    
+
+
+
 
 
 
@@ -122,4 +128,11 @@ var myQuestions = [
         },
         correctAnswer:'Harrison Ford',
     },
+    console.log(myQuestions)
 ];
+ console.log(myQuestions);
+
+
+
+
+
