@@ -1,3 +1,12 @@
+
+//--Show function--//
+$(document).ready(function(){
+    $("#start").click(function(){
+        $("#show-number").start();
+    });
+
+});
+
 //-- Timer--//
 var number = 100;
 var intervalId;
@@ -31,6 +40,7 @@ function stop(){
 run();
 
 console.log(number);
+
 
 
 
