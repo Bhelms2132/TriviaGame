@@ -1,24 +1,16 @@
-button {
-    background-color: blue;
-    width: 400px;
-    height: 50px;
-    font-size: 40px;
+.choice{
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 
+
+
+}
+
+.container{
     
 }
 
-body {
-    background: rgb(146, 11, 11);
-    color: silver;
-}
-
-header {
-    text-align: center;
-    margin: 100px;
-    font-size: 30px; 
-
-
-}
-
-.inner-body {
-    margin: 250px 0px 0px 0px;
+body{
+    background-image: url("");
 }
