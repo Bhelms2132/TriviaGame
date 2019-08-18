@@ -24,10 +24,8 @@ var intervalId;
   }
 
   function stop() {
-
-    clearInterval(intervalId);
-    alert("Times Up!")
-  }
+     clearInterval(intervalId);
+    }
   run();
 
 //--Questions/Answers array--//
@@ -70,18 +68,15 @@ const myQuestions = [
     },
 
     {
-        question: "In the 1981 Fantasy/Action 'Raiders of the LOst Ark', what actor played Indian Jones charactor?",
+        question: "In the 1981 Fantasy/Action 'Raiders of the Lost Ark', what actor played Indian Jones charactor?",
         choices:["Harrison Ford", "Clint Eastwood", "Burt Reynolds"],
         correctAnswer:'Harrison Ford',
     },
     
 ];
-
 console.log(myQuestions);
 
- 
-function nextQuestion(){
-
+ function nextQuestion(){
     const isQuestionOver = (myQuestions.length -1) === currentQuestion;
 
     if (isQuestionOver){
@@ -91,18 +86,13 @@ function nextQuestion(){
         currentQuestion++;
         loadQuestion();
     }
-    
 }
 
-
 function loadQuestion(){
-
     const question = myQuestions[currentQuestion].question;
     const choices = myQuestions[currentQuestion].choices;
-    
-   
     $("#game").html(`
-        <h4>${question}<h4>  
+        <h5>${question}<h5>  
        ${loadChoices(choices)}`);
 }
 
@@ -143,13 +133,11 @@ function displayResult(){
     $("#game").html(result);
 }
 
-
-
 $("#start").click(function(){
    $("#start").remove();
    $("#show-number").html(number);
    loadQuestion();
-});
+});;
   
    
    

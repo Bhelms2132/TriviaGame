@@ -1,16 +1,35 @@
-.choice{
-    border: 1px solid gray;
-    padding: 10px;
-    border-radius: 4px;
-    font-size: 
 
-
+#show-number{
+    text-align: center;
+    color: red;
 }
 
+h1{
+    text-align: center;
+
+}
 .container{
+    margin: 150px;
+    background-color: white;
     
 }
 
 body{
-    background-image: url("");
+    background-image: url("https://img.freepik.com/free-vector/80-s-geometric-background-flat-design_23-2148233143.jpg?size=1600&ext=jpg");
+    
 }
+
+.choice{
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 4px;
+    text-size-adjust: 10px;
+    width: 300px;
+    text-align: center;
+    background-color: white;
+    float: left;
+     
+
+
+}
+
