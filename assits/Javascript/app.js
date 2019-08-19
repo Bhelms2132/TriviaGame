@@ -38,7 +38,7 @@ const myQuestions = [
 
     {
          question: "In the 1984 Fantasy 'Ghost Busters', Ray tried to think of the most harmless thing, something he loved from his childhood that the Ghost Busters wouldul have to fight. What was it?",
-         choices: ["Barney, the big purple dinasor", "Stay Puft Marshmellow Man", "His dog"],
+         choices: ["Barney, the purple dinasor", "Stay Puft Marshmellow Man", "His dog"],
          correctAnswer:"Stay Puft MarshMellow Man"
 
     },
@@ -133,9 +133,13 @@ function displayResult(){
     $("#game").html(result);
 }
 
+$(document).ready(function(){
+    $("#show-number").hide(number);
+});
+
 $("#start").click(function(){
    $("#start").remove();
-   $("#show-number").html(number);
+   $("#show-number").show(number);
    loadQuestion();
 });;
   

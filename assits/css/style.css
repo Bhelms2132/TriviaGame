@@ -24,12 +24,25 @@ body{
     padding: 10px;
     border-radius: 4px;
     text-size-adjust: 10px;
-    width: 300px;
+    width: 278px;
     text-align: center;
     background-color: white;
     float: left;
-     
+    margin: 20px 0px 0px 60px; 
 
 
+}
+
+#start{
+    color: hotpink;
+}
+
+.button{
+    width: 100px;
+
+}
+
+#game{
+    text-align: center;
 }
 
