@@ -26,7 +26,7 @@ var intervalId;
   function stop() {
      clearInterval(intervalId);
     }
-  run();
+  
 
 //--Questions/Answers array--//
 const myQuestions = [
@@ -39,7 +39,7 @@ const myQuestions = [
     {
          question: "In the 1984 Fantasy 'Ghost Busters', Ray tried to think of the most harmless thing, something he loved from his childhood that the Ghost Busters wouldul have to fight. What was it?",
          choices: ["Barney, the purple dinasor", "Stay Puft Marshmellow Man", "His dog"],
-         correctAnswer:"Stay Puft MarshMellow Man"
+         correctAnswer:"Stay Puft Marshmellow Man"
 
     },
 
@@ -52,7 +52,7 @@ const myQuestions = [
     {
         question: "In the 1988 Drama 'Big', what did the 12 year old boy wish for?",
         choices: ["A drivers license", "Girlfriend", "To be an adult"],
-        correctAnswer:"To be an Adult"
+        correctAnswer:"To be an adult"
     },
 
     {
@@ -82,6 +82,9 @@ console.log(myQuestions);
     if (isQuestionOver){
         console.log("Game Over!");
         displayResult();
+        number = 0;
+        stop();
+        $("#show-number").html("<h2>" + number + "</h2>");
     }else{
         currentQuestion++;
         loadQuestion();
@@ -107,7 +110,8 @@ function loadChoices(choices){
 $(document).on("click", ".choice", function(){
     const selectedAnswer = $(this).attr("data-answer");
     const correctAnswer = myQuestions[currentQuestion].correctAnswer;
-
+       console.log(selectedAnswer);
+       console.log(correctAnswer);
     if (correctAnswer === selectedAnswer){
 
         score++;
@@ -120,6 +124,8 @@ $(document).on("click", ".choice", function(){
         console.log("Wrong!");
         nextQuestion();
     }
+
+
     
 });
 
@@ -127,8 +133,6 @@ function displayResult(){
     const result = `
      <p>You got ${score} Correct questions</p>
      <p>You got ${lost}  Wrong questions</p>
-     <p>Total ${myQuestions.length} questions</p>
-     
      `;
     $("#game").html(result);
 }
@@ -141,6 +145,7 @@ $("#start").click(function(){
    $("#start").remove();
    $("#show-number").show(number);
    loadQuestion();
+   run();
 });;
   
    

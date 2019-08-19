@@ -11,6 +11,7 @@ h1{
 .container{
     margin: 150px;
     background-color: white;
+    text-align: center;
     
 }
 
@@ -35,14 +36,26 @@ body{
 
 #start{
     color: hotpink;
+    text-size-adjust: 20px;
 }
 
-.button{
-    width: 100px;
+.btn-primary{
+    background-color: black;
+    border-color: hotpink;
+}
+.btn-primary:hover{
+    background-color: black;
+    border-color: hotpink;
+}
+
+button{
+    width: 300px;
+    
 
 }
 
 #game{
     text-align: center;
+    padding-bottom: 10px;
 }
 
