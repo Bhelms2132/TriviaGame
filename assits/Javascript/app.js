@@ -1,5 +1,5 @@
 //--Declaring var needed--//
-var number = 100;
+var number = 10;
 var currentQuestion = 0;
 var score = 0;
 var lost = 0;
@@ -20,6 +20,7 @@ var intervalId;
     if (number === 0) {
 
       stop();
+      displayResult();
     }
   }
 
@@ -80,7 +81,7 @@ console.log(myQuestions);
     const isQuestionOver = (myQuestions.length -1) === currentQuestion;
 
     if (isQuestionOver){
-        console.log("Game Over!");
+        
         displayResult();
         number = 0;
         stop();
@@ -90,6 +91,7 @@ console.log(myQuestions);
         loadQuestion();
     }
 }
+
 
 function loadQuestion(){
     const question = myQuestions[currentQuestion].question;
@@ -131,11 +133,15 @@ $(document).on("click", ".choice", function(){
 
 function displayResult(){
     const result = `
-     <p>You got ${score} Correct questions</p>
-     <p>You got ${lost}  Wrong questions</p>
-     `;
-    $("#game").html(result);
+     <p><h3>You got ${score} Correct questions</h3/p>
+     <p><h3>You got ${lost}  Wrong questions</h3/p>
+     <p><h3>Total Question${myQuestions.length}</h3/p>
+     <p><h3>Trivia Over!</h3/p>`
+     
+     $("#game").html(result);
 }
+
+
 
 $(document).ready(function(){
     $("#show-number").hide(number);
@@ -145,7 +151,7 @@ $("#start").click(function(){
    $("#start").remove();
    $("#show-number").show(number);
    loadQuestion();
-   run();
+   run(); 
 });;
   
    
