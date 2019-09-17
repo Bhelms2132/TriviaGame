@@ -1,34 +1,24 @@
 //--Declaring var needed--//
-var number = 10;
+var number = 50;
 var currentQuestion = 0;
 var score = 0;
 var lost = 0;
 var intervalId;
 
-
-
-  function run() {
+function run() {
     intervalId = setInterval(decrement, 1000);
   }
-
-  function decrement() {
-
+function decrement() {
     number--;
-
-    $("#show-number").html("<h2>" + number + "</h2>");
-
-    if (number === 0) {
-
+ $("#show-number").html("<h2>" + number + "</h2>");
+   if (number === 0) {
       stop();
       displayResult();
     }
   }
-
-  function stop() {
+function stop() {
      clearInterval(intervalId);
     }
-  
-
 //--Questions/Answers array--//
 const myQuestions = [
     {
@@ -73,15 +63,12 @@ const myQuestions = [
         choices:["Harrison Ford", "Clint Eastwood", "Burt Reynolds"],
         correctAnswer:'Harrison Ford',
     },
-    
 ];
 console.log(myQuestions);
 
- function nextQuestion(){
+function nextQuestion(){
     const isQuestionOver = (myQuestions.length -1) === currentQuestion;
-
-    if (isQuestionOver){
-        
+     if (isQuestionOver){
         displayResult();
         number = 0;
         stop();
@@ -91,8 +78,6 @@ console.log(myQuestions);
         loadQuestion();
     }
 }
-
-
 function loadQuestion(){
     const question = myQuestions[currentQuestion].question;
     const choices = myQuestions[currentQuestion].choices;
@@ -100,7 +85,6 @@ function loadQuestion(){
         <h5>${question}<h5>  
        ${loadChoices(choices)}`);
 }
-
 function loadChoices(choices){
     var result = "";
     for(var i = 0; i < choices.length; i++){
@@ -108,45 +92,32 @@ function loadChoices(choices){
     }
     return result;
 }
-
 $(document).on("click", ".choice", function(){
     const selectedAnswer = $(this).attr("data-answer");
     const correctAnswer = myQuestions[currentQuestion].correctAnswer;
        console.log(selectedAnswer);
        console.log(correctAnswer);
     if (correctAnswer === selectedAnswer){
-
         score++;
         console.log("Correct!");
         nextQuestion();
-        
     }else{
-       
         lost++;
         console.log("Wrong!");
         nextQuestion();
     }
-
-
-    
 });
-
 function displayResult(){
     const result = `
      <p><h3>You got ${score} Correct questions</h3/p>
      <p><h3>You got ${lost}  Wrong questions</h3/p>
      <p><h3>Total Question${myQuestions.length}</h3/p>
      <p><h3>Trivia Over!</h3/p>`
-     
      $("#game").html(result);
 }
-
-
-
 $(document).ready(function(){
     $("#show-number").hide(number);
 });
-
 $("#start").click(function(){
    $("#start").remove();
    $("#show-number").show(number);
