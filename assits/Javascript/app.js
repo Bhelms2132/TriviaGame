@@ -4,7 +4,6 @@ var currentQuestion = 0;
 var score = 0;
 var lost = 0;
 var intervalId;
-
 function run() {
     intervalId = setInterval(decrement, 1000);
   }
@@ -65,7 +64,6 @@ const myQuestions = [
     },
 ];
 console.log(myQuestions);
-
 function nextQuestion(){
     const isQuestionOver = (myQuestions.length -1) === currentQuestion;
      if (isQuestionOver){
