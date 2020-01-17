@@ -8,4 +8,4 @@ Now once the time runs out, the app displays the results preventing the user fro
 
 There are seven questions with multipule answers within an array, more questions and answers can easly be added to the app by adding them within the array.
 
-Instructions:  You are given seven total questions with multipule choice answers. The user must answer within the fifty second time frame or the game will end displaying the results of the questions the user has answered. 
+Instructions:  You are given seven total questions with multipule choice answers. The user must answer within the fifty second time frame or the game will end displaying the results of the questions the user has answered
