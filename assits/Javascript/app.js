@@ -22,7 +22,7 @@ function stop() {
 const myQuestions = [
     {
         question: "In the 1983 Thiller 'Cujo', this sweet fluffy St.Bernard was bitten by what animal before terrorizing a small town and a stay at home mom and her son ?",
-        choices: ["Snake", "Coyote", "Bat"],
+        choices: ["Mongoose", "HoneyBadger", "Bat"],
         correctAnswer: "Bat"
     },
 
